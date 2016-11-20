@@ -1,0 +1,11 @@
+.atui-code {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 3.6rem;
+    background: #202020;
+    overflow: hidden;
+    font-family: 'Source Code Pro', monospace;
+}

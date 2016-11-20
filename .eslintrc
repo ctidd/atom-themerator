@@ -146,7 +146,7 @@
     ###############################################################################################
 
     "camelcase": [2, {"properties": "always"}],   # Require camelCase property names
-    "new-cap": 2,                                 # Require Capitalized class names
+    "new-cap": 0,                                 # CHANGED: Don't require Capitalized class names
 
     ###############################################################################################
     # OBJECTS <https://github.com/thenerdery/javascript-standards#objects>

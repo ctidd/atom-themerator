@@ -1,0 +1,16 @@
+.atui-pane {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    top: 0;
+    padding: 3.6rem;
+    overflow: auto;
+}
+
+.atui-pane_left {
+    left: 0;
+}
+
+.atui-pane_right {
+    right: 0;
+}

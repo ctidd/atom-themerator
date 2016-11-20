@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro:400");
+
+* {
+    box-sizing: border-box;
+    cursor: default;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+input {
+    cursor: text;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    color: #332c2d;
+    background: #fff;
+}
+
+body, button, input {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+a {
+    color: inherit;
+}

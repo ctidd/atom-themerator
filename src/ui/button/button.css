@@ -1,0 +1,14 @@
+.atui-button {
+    height: 4.2rem;
+    padding: 0 1.2rem;
+    border: none;
+    border-radius: .2rem;
+    color: #fff;
+    font-weight: 700;
+    background: #40a977;
+    cursor: pointer;
+}
+
+.atui-button:hover,
+.atui-button:focus {
+}
