@@ -28,13 +28,13 @@ export default class AppContainer extends React.Component {
         this.setState({ data });
     }
 
-    processStylesheet(stylesheet, fields) {
-        return fields.reduce((styles, field, key) => {
+    processStylesheet(styles, fields) {
+        return fields.reduce((stylesheet, field, key) => {
             const pattern = new RegExp(`@${key}`, 'g');
             const value = field.get('value');
             console.log(value);
             return stylesheet.replace(pattern, value);
-        }, stylesheet);
+        }, styles);
     }
 
     render() {
