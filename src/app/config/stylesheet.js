@@ -5,7 +5,20 @@ export default `
 ***************************************/
 
 .atui-code {
+    color: @text;
+}
+
+.atui-code,
+.atui-code * {
     background: @background !important;
+}
+
+.atui-code * {
+    transform: none !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: static !important;
 }
 
 /**************************************
@@ -26,7 +39,7 @@ export default `
 }
 
 .keyword.operator {
-    color: @syntax-text-color;
+    color: @text;
 }
 
 .keyword.operator.new {
@@ -122,7 +135,7 @@ export default `
 }
 
 .punctuation.section.embedded {
-    color: @syntax-text-color;
+    color: @text;
 }
 
 .entity.name.type {
@@ -130,11 +143,11 @@ export default `
 }
 
 .entity.other.inherited-class {
-    color: @syntax-text-color;
+    color: @text;
 }
 
 .entity.name.class, &.name.type.class {
-    color: @syntax-text-color;
+    color: @text;
 }
 
 .entity.name.tag {
@@ -146,15 +159,15 @@ export default `
 }
 
 .entity.name.function, .support.function, .function.arrow {
-    color: @syntax-text-color;
+    color: @text;
 }
 
 .object.key {
-    color: @syntax-text-color;
+    color: @text;
 }
 
 .meta.class {
-    color: @syntax-text-color;
+    color: @text;
 }
 
 .meta.link {
@@ -170,7 +183,7 @@ export default `
 }
 
 .meta.separator {
-    color: @syntax-text-color;
+    color: @text;
 }
 
 .meta.tag {
@@ -178,7 +191,7 @@ export default `
 }
 
 .none {
-    color: @syntax-text-color;
+    color: @text;
 }
 
 .markup.bold {

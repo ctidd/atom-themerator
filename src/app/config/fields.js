@@ -1,8 +1,4 @@
 export default {
-    background: {
-        label: 'Background',
-        value: '#202020',
-    },
     cursor: {
         label: 'Cursor',
         value: '#fff',
@@ -11,12 +7,28 @@ export default {
         label: 'Selection',
         value: '#404040',
     },
+    background: {
+        label: 'Background',
+        value: '#101010',
+    },
     text: {
         label: 'Text',
         value: '#fff',
     },
+    variable: {
+        label: 'Variable',
+        value: '#fff',
+    },
+    constant: {
+        label: 'Constant',
+        value: '#fff',
+    },
     string: {
         label: 'String',
-        value: '#fff',
+        value: '#40a977',
+    },
+    keyword: {
+        label: 'Keyword',
+        value: '#BA3525',
     },
 };
