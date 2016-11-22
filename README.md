@@ -1,6 +1,8 @@
-# Atom Themerator (Beta)
+# Atom Themerator (Alpha)
 
-Under active development.
+Under active development. (Not yet ready for creating complete themes.)
+
+[Go to Atom Themerator](https://atom-themerator.ctidd.com/)
 
 ## To Do
 
