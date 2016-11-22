@@ -21,18 +21,19 @@ export default class AppContainer extends React.Component {
         this.onFieldChange = this.onFieldChange.bind(this);
     }
 
-    onFieldChange(key, value) {
+    onFieldChange(token, value) {
         let data = this.state.data;
-        data = data.setIn(['fields', key, 'value'], value);
+        const field = data.get('fields').findKey(field => field.get('token') === token);
+        data = data.setIn(['fields', field, 'value'], value);
         data = data.setIn(['styles'], this.processStylesheet(stylesheet, data.get('fields')));
         this.setState({ data });
     }
 
     processStylesheet(styles, fields) {
-        return fields.reduce((stylesheet, field, key) => {
-            const pattern = new RegExp(`@${key}`, 'g');
+        return fields.reduce((stylesheet, field, i) => {
+            const token = fields.get(i).get('token');
+            const pattern = new RegExp(`@${token}`, 'g');
             const value = field.get('value');
-            console.log(value);
             return stylesheet.replace(pattern, value);
         }, styles);
     }

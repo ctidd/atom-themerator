@@ -1,34 +1,47 @@
-export default {
-    cursor: {
+export default [
+    {
+        token: 'cursor',
         label: 'Cursor',
         value: '#fff',
     },
-    selection: {
+    {
+        token: 'selection',
         label: 'Selection',
         value: '#404040',
     },
-    background: {
+    {
+        token: 'invisible',
+        label: 'Invisible Characters (If enabled)',
+        value: 'rgba(255, 255, 255, .2)',
+    },
+    {
+        token: 'background',
         label: 'Background',
         value: '#101010',
     },
-    text: {
+    {
+        token: 'text',
         label: 'Text',
         value: '#fff',
     },
-    variable: {
+    {
+        token: 'variable',
         label: 'Variable',
         value: '#fff',
     },
-    constant: {
+    {
+        token: 'constant',
         label: 'Constant',
         value: '#fff',
     },
-    string: {
+    {
+        token: 'string',
         label: 'String',
         value: '#40a977',
     },
-    keyword: {
+    {
+        token: 'keyword',
         label: 'Keyword',
         value: '#BA3525',
     },
-};
+];
