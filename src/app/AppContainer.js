@@ -10,18 +10,36 @@ export default class AppContainer extends React.Component {
     constructor(props) {
         super(props);
 
+        this.snippets = Immutable.fromJS(snippets);
+        const immutableFields = Immutable.fromJS(fields);
+
         this.state = {
             data: Immutable.fromJS({
-                snippet: snippets.JavaScript,
-                styles: this.processStylesheet(stylesheet, Immutable.fromJS(fields)),
-                fields,
+                snippet: this.snippets.get(0).get('snippet'),
+                styles: this.processStylesheet(stylesheet, immutableFields),
+                fields: immutableFields,
             }),
         };
 
+        this.onSnippetChange = this.onSnippetChange.bind(this);
         this.onFieldChange = this.onFieldChange.bind(this);
     }
 
-    onFieldChange(token, value) {
+    onSnippetChange(e) {
+        const value = e.target.value;
+
+        let data = this.state.data;
+        const selected = this.snippets
+            .find(snippet => snippet.get('name') === value)
+            .get('snippet');
+        data = data.set('snippet', selected);
+        this.setState({ data });
+    }
+
+    onFieldChange(e) {
+        const token = e.target.id;
+        const value = e.target.value;
+
         let data = this.state.data;
         const field = data.get('fields').findKey(field => field.get('token') === token);
         data = data.setIn(['fields', field, 'value'], value);
@@ -44,6 +62,8 @@ export default class AppContainer extends React.Component {
                 <AppStyleInjector styles={ this.state.data.get('styles') } />
                 <AppLayout
                     snippet={ this.state.data.get('snippet') }
+                    snippets={ this.snippets }
+                    onSnippetChange={ this.onSnippetChange }
                     fields={ this.state.data.get('fields') }
                     onFieldChange={ this.onFieldChange }
                     />

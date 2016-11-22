@@ -44,4 +44,34 @@ export default [
         label: 'Keyword',
         value: '#BA3525',
     },
+    {
+        token: 'css-property',
+        label: 'CSS Property',
+        value: '#BA3525',
+    },
+    {
+        token: 'css-attribute',
+        label: 'CSS Attribute',
+        value: '#BA3525',
+    },
+    {
+        token: 'css-variable',
+        label: 'CSS Variable',
+        value: '#BA3525',
+    },
+    {
+        token: 'css-function',
+        label: 'CSS Function',
+        value: '#BA3525',
+    },
+    {
+        token: 'css-constant',
+        label: 'CSS Literal',
+        value: '#40a977',
+    },
+    {
+        token: 'css-unit',
+        label: 'CSS Unit',
+        value: '#40a977',
+    },
 ];

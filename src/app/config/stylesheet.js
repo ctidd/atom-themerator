@@ -21,10 +21,41 @@ export default `
     position: static !important;
 }
 
+.invisible-character {
+    color: @invisible;
+}
+
 /**************************************
 ** EDITOR
 ***************************************/
 
+// General colors
+@syntax-text-color: @text;
+@syntax-cursor-color: @text;
+@syntax-selection-color: @selection;
+@syntax-selection-flash-color: @selection;
+@syntax-background-color: @background;
+
+// Guide colors
+@syntax-wrap-guide-color: @invisible;
+@syntax-indent-guide-color: @invisible;
+@syntax-invisible-character-color: @invisible;
+
+// For find and replace markers
+@syntax-result-marker-color: @marker;
+@syntax-result-marker-color-selected: @marker-selected;
+
+// Gutter colors
+@syntax-gutter-text-color: @gutter-text;
+@syntax-gutter-text-color-selected: @gutter-text-selected;
+@syntax-gutter-background-color: @gutter-background;
+@syntax-gutter-background-color-selected: @gutter-background-selected;
+
+// For git diff info. i.e. in the gutter
+@syntax-color-added: @git-added;
+@syntax-color-modified: @git-modified;
+@syntax-color-renamed: @git-renamed;
+@syntax-color-removed: @git-removed;
 
 /**************************************
 ** ALL LANGUAGES
@@ -32,6 +63,14 @@ export default `
 
 .comment {
     color: @comment;
+}
+
+.variable {
+    color: @variable;
+}
+
+.variable.this {
+    color: @variable-this;
 }
 
 .keyword {
@@ -58,43 +97,21 @@ export default `
     color: @constant;
 }
 
-.constant.character.escape {
-    color: inherit;
-}
-
 .constant.numeric {
     color: @constant-numeric;
 }
 
-.constant.other.color {
+.constant.color,
+.constant.rgb-value {
     color: @constant-color;
 }
 
-.constant.other.rgb-value {
-    color: @constant-rbg;
-}
-
-.constant.other.symbol {
+.constant.symbol {
     color: @constant-symbol;
 }
 
 .constant.language {
     color: @constant-language;
-}
-
-.variable {
-    color: @variable;
-}
-
-.variable.this {
-    color: @variable-this;
-}
-
-.invalid.illegal,
-.invalid.broken,
-.invalid.deprecated,
-.invalid.unimplemented {
-    color: @error;
 }
 
 .string {
@@ -111,22 +128,19 @@ export default `
     color: @regexp;
 }
 
+.punctuation.definition {
+    color: @definition;
+}
+
 .punctuation.definition.comment {
     color: @comment;
 }
 
-.punctuation.definition.heading,
-.punctuation.definition.identity {
-    color: @GREEN;
-}
-
 .punctuation.definition.bold {
-    color: @GREEN;
     font-style: bold;
 }
 
 .punctuation.definition.italic {
-    color: @GREEN;
     font-style: italic;
 }
 
@@ -139,14 +153,13 @@ export default `
 }
 
 .entity.name.type {
-    color: @BLUE;
+    color: @keyword-type;
 }
 
-.entity.other.inherited-class {
-    color: @text;
+.name.type.class {
 }
 
-.entity.name.class, &.name.type.class {
+.entity.name.class {
     color: @text;
 }
 
@@ -194,6 +207,17 @@ export default `
     color: @text;
 }
 
+.invalid.illegal,
+.invalid.broken,
+.invalid.deprecated,
+.invalid.unimplemented {
+    color: @error;
+}
+
+/**************************************
+** MARKUP
+***************************************/
+
 .markup.bold {
     color: @BLUE;
     font-weight: bold;
@@ -208,16 +232,44 @@ export default `
     color: @BLUE;
 }
 
-.source.gfm .markup {
-    -webkit-font-smoothing: auto;
+/**************************************
+** CSS
+***************************************/
+
+.css .keyword.control {
+    color: @css-keyword;
 }
+
+.css .attribute-name.other {
+    color: @css-attribute;
+}
+
+.css .property-name {
+    color: @css-property;
+}
+
+.css .function {
+    color: @css-function;
+}
+
+.css .variable {
+    color: @css-variable;
+}
+
+.css .constant {
+    color: @css-constant;
+}
+
+.css .unit {
+    color: @css-unit;
+}
+
+/**************************************
+** MARKDOWN
+***************************************/
 
 .source.gfm .markup.heading {
     color: @BLUE;
-}
-
-:host, atom-text-editor[mini] .scroll-view {
-    padding-left: 1px;
 }
 
 `;

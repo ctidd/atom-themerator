@@ -7,12 +7,14 @@
     font-weight: 700;
 }
 
-.atui-field-input {
-    display: block;
-    width: 100%;
-    height: 4.2rem;
-}
-
+.atui-field-input,
 .atui-field-select {
     display: block;
+    padding: 0 1.2rem;
+    border: .1rem solid #c0c0c0;
+    width: 100%;
+    height: 4.2rem;
+    background: #fff;
+    border-radius: .2rem;
+    -webkit-appearance: none;
 }
