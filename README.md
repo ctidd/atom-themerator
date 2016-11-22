@@ -8,3 +8,4 @@ Under active development.
 * Explore using the Atom Highlights library to mark up example source code in-browser.
 * Add multiple language samples.
 * Implement download / view generated CSS functionality.
+* "Simplified mode" to generate theme based on a few key color selections.

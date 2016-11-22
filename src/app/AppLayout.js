@@ -25,9 +25,6 @@ export default ({ fields, onFieldChange, snippet, snippets, onSnippetChange }) =
                     <Button>
                         Download Theme
                     </Button>
-                    <Button>
-                        View Generated CSS
-                    </Button>
                 </div>
             </div>
         </Pane>

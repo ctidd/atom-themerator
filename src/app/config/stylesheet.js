@@ -5,12 +5,12 @@ export default `
 ***************************************/
 
 .atui-code {
-    color: @text;
+    color: @all-text;
 }
 
 .atui-code,
 .atui-code * {
-    background: @background !important;
+    background: @ui-background !important;
 }
 
 .atui-code * {
@@ -22,7 +22,7 @@ export default `
 }
 
 .invisible-character {
-    color: @invisible;
+    color: @ui-invisible;
 }
 
 /**************************************
@@ -62,105 +62,86 @@ export default `
 ***************************************/
 
 .comment {
-    color: @comment;
+    color: @all-comment;
 }
 
 .variable {
-    color: @variable;
+    color: @all-variable;
 }
 
 .variable.this {
-    color: @variable-this;
+    color: @all-variable-this;
 }
 
 .keyword {
-    color: @keyword;
+    color: @all-keyword;
 }
 
 .keyword.operator {
-    color: @text;
+    color: @all-operator;
 }
 
 .keyword.operator.new {
-    color: @keyword-new;
+    color: @all-keyword-new;
 }
 
 .keyword.other.unit {
-    color: @keyword-unit;
+    color: @all-keyword-unit;
 }
 
 .storage {
-    color: @keyword-storage;
+    color: @all-keyword-storage;
 }
 
 .constant {
-    color: @constant;
+    color: @all-constant;
 }
 
 .constant.numeric {
-    color: @constant-numeric;
+    color: @all-constant-numeric;
 }
 
 .constant.color,
 .constant.rgb-value {
-    color: @constant-color;
+    color: @all-constant-color;
 }
 
 .constant.symbol {
-    color: @constant-symbol;
+    color: @all-constant-symbol;
 }
 
 .constant.language {
-    color: @constant-language;
+    color: @all-constant-language;
 }
 
 .string {
-    color: @string;
+    color: @all-string;
 }
 
 .string.unquoted {
-    color: @text;
+    color: @all-text;
 }
 
 .string.regexp,
 .string.regexp > .keyword,
 .string.regexp > .punctuation {
-    color: @regexp;
-}
-
-.punctuation.definition {
-    color: @definition;
+    color: @all-regexp;
 }
 
 .punctuation.definition.comment {
-    color: @comment;
-}
-
-.punctuation.definition.bold {
-    font-style: bold;
-}
-
-.punctuation.definition.italic {
-    font-style: italic;
-}
-
-.punctuation.definition.interpolation {
-    color: @COLOR_MUTED;
-}
-
-.punctuation.section.embedded {
-    color: @text;
+    color: @all-comment;
 }
 
 .entity.name.type {
-    color: @keyword-type;
+    color: @all-keyword-type;
 }
 
 .name.type.class {
+    color: @all-type-class;
 }
 
 .entity.name.class {
-    color: @text;
+    color: @all-text;
 }
 
 .entity.name.tag {
@@ -172,64 +153,54 @@ export default `
 }
 
 .entity.name.function, .support.function, .function.arrow {
-    color: @text;
+    color: @all-function;
 }
 
 .object.key {
-    color: @text;
+    color: @all-key;
 }
 
 .meta.class {
-    color: @text;
-}
-
-.meta.link {
-    color: @BLUE;
+    color: @all-text;
 }
 
 .meta.require {
-    color: @BLUE;
+    color: @all-keyword;
 }
 
 .meta.selector {
-    color: @BLUE;
+    color: @all-keyword;
 }
 
-.meta.separator {
-    color: @text;
+.bold {
+    font-style: bold;
 }
 
-.meta.tag {
-    color: @COLOR_MUTED;
+.italic {
+    font-style: italic;
 }
 
 .none {
-    color: @text;
+    color: @all-text;
 }
 
 .invalid.illegal,
 .invalid.broken,
 .invalid.deprecated,
 .invalid.unimplemented {
-    color: @error;
+    color: @all-error;
 }
 
 /**************************************
 ** MARKUP
 ***************************************/
 
-.markup.bold {
-    color: @BLUE;
-    font-weight: bold;
+.meta.tag {
+    color: @markup-punctuation;
 }
 
-.markup.italic {
-    color: @GREEN;
-    font-style: italic;
-}
-
-.markup.heading .punctuation.definition.heading {
-    color: @BLUE;
+.meta.separator {
+    color: @markup-punctuation;
 }
 
 /**************************************
@@ -269,7 +240,7 @@ export default `
 ***************************************/
 
 .source.gfm .markup.heading {
-    color: @BLUE;
+    color: @markdown-heading;
 }
 
 `;
