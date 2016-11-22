@@ -10,7 +10,7 @@ export default ({ fields, onFieldChange, snippet, snippets, onSnippetChange }) =
             <div className="atui-vList atui-vList_lg">
                 <div className="atui-vList atui-vList_sm">
                     <h1 className="atui-hdg atui-hdg_major">
-                        Atom Themerator (Beta)
+                        Atom Themerator (Alpha)
                     </h1>
                     <p>Atom Themerator is an online syntax theme generator for Atom. Prepare your syntax theme with live preview, then download the generated theme for use &mdash; or manually tweak the generated theme for more precise styling.</p>
                     <p><a href="https://github.com/ctidd/atom-themerator">Atom Themerator on GitHub</a></p>
