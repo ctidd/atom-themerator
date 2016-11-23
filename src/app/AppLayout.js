@@ -4,7 +4,14 @@ import AppForm from './AppForm';
 import Button from '../ui/button/Button';
 import Code from '../ui/code/Code';
 
-export default ({ fields, onFieldChange, snippet, snippets, onSnippetChange }) => (
+export default ({
+    fields,
+    onFieldChange,
+    snippet,
+    snippets,
+    onSnippetChange,
+    onDownload,
+}) => (
     <div>
         <Pane side={ PaneOptions.side.left }>
             <div className="atui-vList atui-vList_lg">
@@ -22,9 +29,11 @@ export default ({ fields, onFieldChange, snippet, snippets, onSnippetChange }) =
                     fields={ fields }
                     onFieldChange={ onFieldChange } />
                 <div>
-                    <Button>
-                        Download Theme
-                    </Button>
+                    <form onSubmit={ onDownload }>
+                        <Button>
+                            Download Theme
+                        </Button>
+                    </form>
                 </div>
             </div>
         </Pane>

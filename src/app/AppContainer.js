@@ -1,5 +1,7 @@
 import React from 'react';
 import Immutable from 'immutable';
+import JSZip from 'jszip';
+import FileSaver from 'file-saver';
 import AppStyleInjector from './AppStyleInjector';
 import AppLayout from './AppLayout';
 import snippets from './config/snippets';
@@ -23,6 +25,7 @@ export default class AppContainer extends React.Component {
 
         this.onSnippetChange = this.onSnippetChange.bind(this);
         this.onFieldChange = this.onFieldChange.bind(this);
+        this.onDownload = this.onDownload.bind(this);
     }
 
     onSnippetChange(e) {
@@ -56,6 +59,13 @@ export default class AppContainer extends React.Component {
         }, styles);
     }
 
+    onDownload(e) {
+        e.preventDefault();
+        const zip = new JSZip();
+        zip.file('index.less', this.state.data.get('styles'));
+        zip.generateAsync({ type: 'blob' }).then(blob => FileSaver.saveAs(blob, 'theme.zip'));
+    }
+
     render() {
         return (
             <div>
@@ -66,6 +76,7 @@ export default class AppContainer extends React.Component {
                     onSnippetChange={ this.onSnippetChange }
                     fields={ this.state.data.get('fields') }
                     onFieldChange={ this.onFieldChange }
+                    onDownload={ this.onDownload }
                     />
             </div>
         );
