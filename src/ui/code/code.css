@@ -1,8 +1,9 @@
 .atui-code {
+    position: absolute;
     margin: -3.6rem;
     padding: 3.6rem;
-    min-height: calc(100% + (2 * 3.6rem));
-    min-width: calc(100% + (2 * 3.6rem));
+    height: 100%;
+    width: 100%;
     background: #202020;
     overflow: hidden;
     font-family: 'Source Code Pro', monospace;

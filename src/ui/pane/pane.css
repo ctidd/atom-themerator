@@ -1,5 +1,8 @@
 .atui-pane {
     position: relative;
+}
+
+.atui-pane-content {
     padding: 3.6rem;
 }
 

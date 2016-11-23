@@ -14,6 +14,8 @@ export default ({ side, children }) => (
         ${side === PaneOptions.side.left ? 'atui-pane_left' : ''}
         ${side === PaneOptions.side.right ? 'atui-pane_right' : ''}
         `}>
-        { children }
+        <div className="atui-pane-content">
+            { children }
+        </div>
     </div>
 );
