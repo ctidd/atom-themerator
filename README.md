@@ -1,6 +1,6 @@
 # Atom Themerator (Alpha)
 
-*The in-browser syntax theme generator for Atom.*
+*An in-browser syntax theme generator for Atom.*
 
 [Go to Atom Themerator](https://atom-themerator.ctidd.com/)
 
