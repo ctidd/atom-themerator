@@ -6,7 +6,10 @@ import AppStyleInjector from './AppStyleInjector';
 import AppLayout from './AppLayout';
 import snippets from './config/snippets';
 import fields from './config/fields';
-import stylesheet from './config/stylesheet';
+import stylesheet from './config/theme/stylesheet';
+import themePackageJson from './config/theme/package';
+import themeReadme from './config/theme/readme';
+import themeLicense from './config/theme/license';
 
 export default class AppContainer extends React.Component {
     constructor(props) {
@@ -63,6 +66,9 @@ export default class AppContainer extends React.Component {
         e.preventDefault();
         const zip = new JSZip();
         zip.file('index.less', this.state.data.get('styles'));
+        zip.file('package.json', themePackageJson);
+        zip.file('README.md', themeReadme);
+        zip.file('LICENSE.md', themeLicense);
         zip.generateAsync({ type: 'blob' }).then(blob => FileSaver.saveAs(blob, 'theme.zip'));
     }
 
