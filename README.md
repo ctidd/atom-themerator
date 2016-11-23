@@ -12,7 +12,7 @@
 
 - [x] Implement color selection, code preview, and code preview switching.
 - [x] Implement download / view generated CSS functionality.
-- [ ] Add initial theme package.json to downloaded zip.
+- [x] Add initial theme package.json to downloaded zip.
 - [ ] Complete preparing theme and field options.
 - [ ] Add a thorough assortment of language samples.
 
