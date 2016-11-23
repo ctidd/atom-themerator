@@ -1,5 +1,10 @@
 export default [
     {
+        token: 'ui-text',
+        label: 'UI: Text',
+        value: '#fff',
+    },
+    {
         token: 'ui-background',
         label: 'UI: Background',
         value: '#101010',
@@ -18,11 +23,6 @@ export default [
         token: 'ui-invisible',
         label: 'UI: Invisible Characters (If enabled)',
         value: 'rgba(255, 255, 255, .2)',
-    },
-    {
-        token: 'all-text',
-        label: 'All: Base Text',
-        value: '#fff',
     },
     {
         token: 'all-comment',
@@ -45,8 +45,28 @@ export default [
         value: '#fff',
     },
     {
-        token: 'all-string',
+        token: 'all-constant-string',
         label: 'All: String',
+        value: '#40a977',
+    },
+    {
+        token: 'all-constant-string-delimiter',
+        label: 'All: String Delimiter',
+        value: '#40a977',
+    },
+    {
+        token: 'all-constant-numeric',
+        label: 'All: Number',
+        value: '#40a977',
+    },
+    {
+        token: 'all-constant-color',
+        label: 'All: Color',
+        value: '#40a977',
+    },
+    {
+        token: 'all-constant-regexp',
+        label: 'All: Regular Expression',
         value: '#40a977',
     },
     {
@@ -75,12 +95,12 @@ export default [
         value: '#BA3525',
     },
     {
-        token: 'all-operator',
+        token: 'all-keyword-operator',
         label: 'All: Operator',
         value: '#BA3525',
     },
     {
-        token: 'all-unit',
+        token: 'all-keyword-unit',
         label: 'All: Unit',
         value: '#BA3525',
     },
@@ -105,9 +125,19 @@ export default [
         value: '#40a977',
     },
     {
+        token: 'markup-tag',
+        label: 'Markup: Tag',
+        value: '#BA3525',
+    },
+    {
+        token: 'markup-attribute',
+        label: 'Markup: Attribute',
+        value: '#BA3525',
+    },
+    {
         token: 'markup-punctuation',
         label: 'Markup: Punctuation',
-        value: '#BA3525',
+        value: '#808080',
     },
     {
         token: 'css-property',

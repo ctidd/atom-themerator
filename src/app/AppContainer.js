@@ -50,9 +50,9 @@ export default class AppContainer extends React.Component {
     processStylesheet(styles, fields) {
         return fields.reduce((stylesheet, field, i) => {
             const token = fields.get(i).get('token');
-            const pattern = new RegExp(`@${token}`, 'g');
+            const pattern = new RegExp(`@${token};`, 'g');
             const value = field.get('value');
-            return stylesheet.replace(pattern, value);
+            return stylesheet.replace(pattern, `${value};`);
         }, styles);
     }
 

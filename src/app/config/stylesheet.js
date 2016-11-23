@@ -5,20 +5,18 @@ export default `
 ***************************************/
 
 .atui-code {
-    color: @all-text;
-}
-
-.atui-code,
-.atui-code * {
-    background: @ui-background !important;
+    color: @ui-text;
+    background: @ui-background;
 }
 
 .atui-code * {
-    transform: none !important;
-    height: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    background: transparent !important;
+}
+
+.atui-code * {
     position: static !important;
+    height: auto !important;
+    transform: none !important;
 }
 
 .invisible-character {
@@ -30,32 +28,37 @@ export default `
 ***************************************/
 
 // General colors
-@syntax-text-color: @text;
-@syntax-cursor-color: @text;
-@syntax-selection-color: @selection;
-@syntax-selection-flash-color: @selection;
-@syntax-background-color: @background;
+@syntax-text-color: @ui-text;
+@syntax-cursor-color: @ui-cursor;
+@syntax-selection-color: @ui-selection;
+@syntax-selection-flash-color: @ui-selection;
+@syntax-background-color: @ui-background;
 
 // Guide colors
-@syntax-wrap-guide-color: @invisible;
-@syntax-indent-guide-color: @invisible;
-@syntax-invisible-character-color: @invisible;
+@syntax-wrap-guide-color: @ui-invisible;
+@syntax-indent-guide-color: @ui-invisible;
+@syntax-invisible-character-color: @ui-invisible;
 
 // For find and replace markers
-@syntax-result-marker-color: @marker;
-@syntax-result-marker-color-selected: @marker-selected;
+@syntax-result-marker-color: @ui-selection;
+@syntax-result-marker-color-selected: @ui-selection;
 
 // Gutter colors
-@syntax-gutter-text-color: @gutter-text;
-@syntax-gutter-text-color-selected: @gutter-text-selected;
-@syntax-gutter-background-color: @gutter-background;
-@syntax-gutter-background-color-selected: @gutter-background-selected;
+@syntax-gutter-text-color: @ui-text;
+@syntax-gutter-text-color-selected: @ui-text;
+@syntax-gutter-background-color: @ui-background;
+@syntax-gutter-background-color-selected: @ui-selected;
 
 // For git diff info. i.e. in the gutter
 @syntax-color-added: @git-added;
 @syntax-color-modified: @git-modified;
 @syntax-color-renamed: @git-renamed;
 @syntax-color-removed: @git-removed;
+
+.bracket-matcher .region {
+    border-bottom: none;
+    background: @ui-selection;
+}
 
 /**************************************
 ** ALL LANGUAGES
@@ -78,7 +81,7 @@ export default `
 }
 
 .keyword.operator {
-    color: @all-operator;
+    color: @all-keyword-operator;
 }
 
 .keyword.operator.new {
@@ -114,18 +117,19 @@ export default `
     color: @all-constant-language;
 }
 
-.string {
-    color: @all-string;
+.string.quoted {
+    color: @all-constant-string;
 }
 
-.string.unquoted {
-    color: @all-text;
+.string.definition.begin,
+.string.definition.end {
+    color: @all-constant-string-delimiter;
 }
 
 .string.regexp,
 .string.regexp > .keyword,
 .string.regexp > .punctuation {
-    color: @all-regexp;
+    color: @all-constant-regexp;
 }
 
 .punctuation.definition.comment {
@@ -141,15 +145,7 @@ export default `
 }
 
 .entity.name.class {
-    color: @all-text;
-}
-
-.entity.name.tag {
-    color: @BLUE;
-}
-
-.entity.other.attribute-name {
-    color: @LIGHT_BLUE;
+    color: @ui-text;
 }
 
 .entity.name.function, .support.function, .function.arrow {
@@ -161,7 +157,7 @@ export default `
 }
 
 .meta.class {
-    color: @all-text;
+    color: @ui-text;
 }
 
 .meta.require {
@@ -181,7 +177,7 @@ export default `
 }
 
 .none {
-    color: @all-text;
+    color: @ui-text;
 }
 
 .invalid.illegal,
@@ -194,6 +190,14 @@ export default `
 /**************************************
 ** MARKUP
 ***************************************/
+
+.entity.name.tag {
+    color: @markup-tag;
+}
+
+.entity.other.attribute-name {
+    color: @markup-attribute;
+}
 
 .meta.tag {
     color: @markup-punctuation;
