@@ -1,15 +1,23 @@
 # Atom Themerator (Alpha)
 
-Under active development. (Not yet ready for creating complete themes.)
+*The in-browser syntax theme generator for Atom.*
 
 [Go to Atom Themerator](https://atom-themerator.ctidd.com/)
 
-## To Do
+**Caution:** Atom Themerator is under active development in preparation for its first major release. Although it is nearly finished, it is not yet ready for creating production Atom themes.
+
+## Roadmap
+
+### Phase 1
 
 - [x] Implement color selection, code preview, and code preview switching.
 - [x] Implement download / view generated CSS functionality.
 - [ ] Add initial theme package.json to downloaded zip.
-- [ ] Complete porting theme and provide all field options.
+- [ ] Complete preparing theme and field options.
+- [ ] Add a thorough assortment of language samples.
+
+### Phase 2
+
 - [ ] Explore using the Atom Highlights library to mark up example source code in-browser.
-- [ ] Add multiple language samples.
-- [ ] "Simplified mode" to generate theme based on a few key color selections.
+- [ ] Design an easy mode to generate a cohesive and usable theme based on a few key color selections.
+- [ ] Develop or integrate a color picker and add field color hints.
