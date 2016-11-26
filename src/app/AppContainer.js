@@ -7,6 +7,7 @@ import AppLayout from './AppLayout';
 import snippets from './config/snippets';
 import fields from './config/fields';
 import stylesheet from './config/theme/stylesheet';
+import previewStylesheet from './config/theme/previewStylesheet';
 import themePackageJson from './config/theme/package';
 import themeReadme from './config/theme/readme';
 import themeLicense from './config/theme/license';
@@ -22,6 +23,7 @@ export default class AppContainer extends React.Component {
             data: Immutable.fromJS({
                 snippet: this.snippets.get(0).get('snippet'),
                 styles: this.processStylesheet(stylesheet, immutableFields),
+                previewStyles: this.processStylesheet(previewStylesheet, immutableFields),
                 fields: immutableFields,
             }),
         };
@@ -45,11 +47,15 @@ export default class AppContainer extends React.Component {
     onFieldChange(e) {
         const token = e.target.id;
         const value = e.target.value;
-
         let data = this.state.data;
         const field = data.get('fields').findKey(field => field.get('token') === token);
+
         data = data.setIn(['fields', field, 'value'], value);
-        data = data.setIn(['styles'], this.processStylesheet(stylesheet, data.get('fields')));
+        data = data.setIn(['styles'],
+            this.processStylesheet(stylesheet, data.get('fields')));
+        data = data.setIn(['previewStyles'],
+            this.processStylesheet(previewStylesheet, data.get('fields')));
+
         this.setState({ data });
     }
 
@@ -75,6 +81,7 @@ export default class AppContainer extends React.Component {
     render() {
         return (
             <div>
+                <AppStyleInjector styles={ this.state.data.get('previewStyles') } />
                 <AppStyleInjector styles={ this.state.data.get('styles') } />
                 <AppLayout
                     snippet={ this.state.data.get('snippet') }
