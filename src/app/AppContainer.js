@@ -52,7 +52,7 @@ export default class AppContainer extends React.Component {
 
     onDownload(e) {
         e.preventDefault();
-        ThemeBuilder.download(this.state.styles);
+        this.themeBuilder.download(this.state.styles);
     }
 
     render() {
