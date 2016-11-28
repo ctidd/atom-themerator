@@ -41,8 +41,7 @@ export default class AppContainer extends React.Component {
 
         const fieldKey = this.state.fields.findIndex(field => field.token === token);
         const fields = [...this.state.fields];
-        fields[fieldKey] = { ...fields[fieldKey] };
-        fields[fieldKey].value = value;
+        fields[fieldKey] = { ...fields[fieldKey], value };
 
         const styles = this.themeBuilder.process(stylesheet, fields);
         const previewStyles = this.themeBuilder.process(previewStylesheet, fields);
