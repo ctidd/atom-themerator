@@ -1,4 +1,4 @@
-/* global it */
+/* global it, expect */
 
 import React from 'react';
 import ReactDOM from 'react-dom';
