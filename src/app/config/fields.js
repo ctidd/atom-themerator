@@ -77,47 +77,47 @@ export default [
     {
         token: 'all-keyword',
         label: 'All: Keyword',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'all-keyword-storage',
         label: 'All: Storage Keyword',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'all-keyword-type',
         label: 'All: Type Keyword',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'all-keyword-new',
         label: 'All: `new` Keyword',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'all-keyword-operator',
         label: 'All: Operator',
-        value: '#BA3525',
+        value: '#fff',
     },
     {
         token: 'all-keyword-unit',
         label: 'All: Unit',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'all-type-class',
         label: 'All: Class Type',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'all-key',
         label: 'All: Object Key',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'all-function',
         label: 'All: Function',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'all-error',
@@ -127,12 +127,12 @@ export default [
     {
         token: 'markup-tag',
         label: 'Markup: Tag',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'markup-attribute',
         label: 'Markup: Attribute',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'markup-punctuation',
@@ -142,27 +142,27 @@ export default [
     {
         token: 'css-property',
         label: 'CSS: Property',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'css-attribute',
         label: 'CSS: Attribute',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'css-variable',
         label: 'CSS: Variable',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'css-keyword',
         label: 'CSS: Keyword',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'css-function',
         label: 'CSS: Function',
-        value: '#BA3525',
+        value: '#ba3525',
     },
     {
         token: 'css-constant',
