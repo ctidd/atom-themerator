@@ -1,5 +1,4 @@
 import React from 'react';
-import Immutable from 'immutable';
 import JSZip from 'jszip';
 import FileSaver from 'file-saver';
 import AppStyleInjector from './AppStyleInjector';
@@ -16,16 +15,11 @@ export default class AppContainer extends React.Component {
     constructor(props) {
         super(props);
 
-        this.snippets = Immutable.fromJS(snippets);
-        const immutableFields = Immutable.fromJS(fields);
-
         this.state = {
-            data: Immutable.fromJS({
-                snippet: this.snippets.get(0).get('snippet'),
-                styles: this.processStylesheet(stylesheet, immutableFields),
-                previewStyles: this.processStylesheet(previewStylesheet, immutableFields),
-                fields: immutableFields,
-            }),
+            snippet: snippets[0].snippet,
+            styles: this.processStylesheet(stylesheet, fields),
+            previewStyles: this.processStylesheet(previewStylesheet, fields),
+            fields,
         };
 
         this.onSnippetChange = this.onSnippetChange.bind(this);
@@ -34,36 +28,35 @@ export default class AppContainer extends React.Component {
     }
 
     onSnippetChange(e) {
-        const value = e.target.value;
+        const name = e.target.value;
 
-        let data = this.state.data;
-        const selected = this.snippets
-            .find(snippet => snippet.get('name') === value)
-            .get('snippet');
-        data = data.set('snippet', selected);
-        this.setState({ data });
+        const snippet = snippets
+            .find(snippet => snippet.name === name)
+            .snippet;
+
+        this.setState({ snippet });
     }
 
     onFieldChange(e) {
         const token = e.target.id;
         const value = e.target.value;
-        let data = this.state.data;
-        const field = data.get('fields').findKey(field => field.get('token') === token);
 
-        data = data.setIn(['fields', field, 'value'], value);
-        data = data.setIn(['styles'],
-            this.processStylesheet(stylesheet, data.get('fields')));
-        data = data.setIn(['previewStyles'],
-            this.processStylesheet(previewStylesheet, data.get('fields')));
+        const fieldKey = this.state.fields.findIndex(field => field.token === token);
+        const fields = [...this.state.fields];
+        fields[fieldKey] = { ...fields[fieldKey] };
+        fields[fieldKey].value = value;
 
-        this.setState({ data });
+        const styles = this.processStylesheet(stylesheet, fields);
+        const previewStyles = this.processStylesheet(previewStylesheet, fields);
+
+        this.setState({ fields, styles, previewStyles });
     }
 
     processStylesheet(styles, fields) {
         return fields.reduce((stylesheet, field, i) => {
-            const token = fields.get(i).get('token');
+            const token = fields[i].token;
             const pattern = new RegExp(`@${token};`, 'g');
-            const value = field.get('value');
+            const value = field.value;
             return stylesheet.replace(pattern, `${value};`);
         }, styles);
     }
@@ -71,7 +64,7 @@ export default class AppContainer extends React.Component {
     onDownload(e) {
         e.preventDefault();
         const zip = new JSZip();
-        zip.file('index.less', this.state.data.get('styles'));
+        zip.file('index.less', this.state.styles);
         zip.file('package.json', themePackageJson);
         zip.file('README.md', themeReadme);
         zip.file('LICENSE.md', themeLicense);
@@ -81,13 +74,13 @@ export default class AppContainer extends React.Component {
     render() {
         return (
             <div>
-                <AppStyleInjector styles={ this.state.data.get('previewStyles') } />
-                <AppStyleInjector styles={ this.state.data.get('styles') } />
+                <AppStyleInjector styles={ this.state.previewStyles } />
+                <AppStyleInjector styles={ this.state.styles } />
                 <AppLayout
-                    snippet={ this.state.data.get('snippet') }
-                    snippets={ this.snippets }
+                    snippet={ this.state.snippet }
+                    snippets={ snippets }
                     onSnippetChange={ this.onSnippetChange }
-                    fields={ this.state.data.get('fields') }
+                    fields={ this.state.fields }
                     onFieldChange={ this.onFieldChange }
                     onDownload={ this.onDownload }
                     />

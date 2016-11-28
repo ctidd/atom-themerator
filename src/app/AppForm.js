@@ -8,22 +8,22 @@ export default ({ fields, onFieldChange, snippets, onSnippetChange }) => (
                 <Field
                     id="snippets"
                     label="Language Preview"
-                    options={ snippets.map(s => {
-                        return { name: s.get('name'), value: s.get('name') };
+                    options={ snippets.map(snippet => {
+                        return { name: snippet.name, value: snippet.name };
                     }) }
-                    onChange={ onSnippetChange.bind('') }
+                    onChange={ onSnippetChange }
                     />
             </li>
             { fields.map((field, i) => (
-                <li key={ field.get('token') }>
+                <li key={ field.token }>
                     <Field
-                        id={ field.get('token') }
-                        label={ field.get('label') }
-                        value={ field.get('value') }
-                        onChange={ onFieldChange.bind(field.get('token')) }
+                        id={ field.token }
+                        label={ field.label }
+                        value={ field.value }
+                        onChange={ onFieldChange }
                         />
                 </li>
-            )).toArray() }
+            )) }
         </ul>
     </form>
 );
