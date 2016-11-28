@@ -1,7 +1,7 @@
 import React from 'react';
-import ThemeBuilder from './ThemeBuilder';
-import AppStyleInjector from './AppStyleInjector';
 import AppLayout from './AppLayout';
+import ThemeBuilder from './ThemeBuilder';
+import Style from '../ui/style/Style';
 import snippets from './config/snippets';
 import fields from './config/fields';
 import stylesheet from './config/theme/stylesheet';
@@ -57,8 +57,8 @@ export default class AppContainer extends React.Component {
     render() {
         return (
             <div>
-                <AppStyleInjector styles={ this.state.previewStyles } />
-                <AppStyleInjector styles={ this.state.styles } />
+                <Style>{ this.state.previewStyles }</Style>
+                <Style>{ this.state.styles }</Style>
                 <AppLayout
                     snippet={ this.state.snippet }
                     snippets={ snippets }
