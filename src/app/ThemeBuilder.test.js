@@ -4,8 +4,6 @@ import ThemeBuilder from './ThemeBuilder';
 import fields from './config/fields';
 
 it('processes stylesheet variables', () => {
-    const themeBuilder = new ThemeBuilder();
-
     const initial = `
         foo {
             color: @ui-text;
@@ -19,6 +17,7 @@ it('processes stylesheet variables', () => {
         }
     `;
 
+    const themeBuilder = new ThemeBuilder();
     const result = themeBuilder.process(initial, fields);
     expect(result).toBe(expected);
 });
