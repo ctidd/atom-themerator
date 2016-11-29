@@ -1,4 +1,4 @@
-export default `{
+{
   "name": "your-theme-name",
   "theme": "syntax",
   "version": "0.1.0",
@@ -9,4 +9,4 @@ export default `{
   "engines": {
     "atom": ">0.50.0"
   }
-}`;
+}

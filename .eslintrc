@@ -38,6 +38,7 @@
     "require": true,
     "define": true,
     "process": true,
+    "Promise": true,
     "Symbol": true
   },
   "parser": "babel-eslint",

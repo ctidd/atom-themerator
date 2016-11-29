@@ -4,25 +4,29 @@ import ThemeBuilder from './ThemeBuilder';
 import Style from '../ui/style/Style';
 import snippets from './config/snippets';
 import fields from './config/fields';
-import stylesheet from './config/theme/stylesheet';
-import previewStylesheet from './config/theme/previewStylesheet';
 
 export default class AppContainer extends React.Component {
     constructor(props) {
         super(props);
 
-        this.themeBuilder = new ThemeBuilder();
-
-        this.state = {
-            snippet: snippets[0].snippet,
-            styles: this.themeBuilder.process(stylesheet, fields),
-            previewStyles: this.themeBuilder.process(previewStylesheet, fields),
-            fields,
-        };
-
         this.onSnippetChange = this.onSnippetChange.bind(this);
         this.onFieldChange = this.onFieldChange.bind(this);
         this.onDownload = this.onDownload.bind(this);
+
+        this.tb = new ThemeBuilder();
+        this.state = null;
+        this.init();
+    }
+
+    async init() {
+        await this.tb.init();
+
+        this.setState({
+            snippet: snippets[0].snippet,
+            styles: this.tb.process(this.tb.assets.stylesheet, fields),
+            previewStyles: this.tb.process(this.tb.assets.previewStylesheet, fields),
+            fields,
+        });
     }
 
     onSnippetChange(e) {
@@ -43,18 +47,22 @@ export default class AppContainer extends React.Component {
         const fields = [...this.state.fields];
         fields[fieldKey] = { ...fields[fieldKey], value };
 
-        const styles = this.themeBuilder.process(stylesheet, fields);
-        const previewStyles = this.themeBuilder.process(previewStylesheet, fields);
+        const styles = this.tb.process(this.tb.assets.stylesheet, fields);
+        const previewStyles = this.tb.process(this.tb.assets.previewStylesheet, fields);
 
         this.setState({ fields, styles, previewStyles });
     }
 
     onDownload(e) {
         e.preventDefault();
-        this.themeBuilder.download(this.state.styles);
+        this.tb.download(this.state.styles);
     }
 
     render() {
+        if (this.state === null) {
+            return null;
+        }
+
         return (
             <div>
                 <Style>{ this.state.previewStyles }</Style>
