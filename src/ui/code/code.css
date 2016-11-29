@@ -1,10 +1,15 @@
 .atui-code {
-    position: absolute;
     margin: -3.6rem;
     padding: 3.6rem;
-    height: 100%;
-    width: 100%;
     background: #202020;
     overflow: hidden;
     font-family: 'Source Code Pro', monospace;
+}
+
+@media (min-width: 60em) {
+    .atui-code {
+        position: absolute;
+        min-height: 100%;
+        width: 100%;
+    }
 }
