@@ -22,7 +22,7 @@
 @syntax-gutter-text-color: @ui-text;
 @syntax-gutter-text-color-selected: @ui-text;
 @syntax-gutter-background-color: @ui-background;
-@syntax-gutter-background-color-selected: @ui-selected;
+@syntax-gutter-background-color-selected: @ui-selection;
 
 /* For git diff info. i.e. in the gutter */
 @syntax-color-added: @git-added;
