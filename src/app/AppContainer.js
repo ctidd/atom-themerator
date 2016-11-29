@@ -23,8 +23,8 @@ export default class AppContainer extends React.Component {
 
         this.setState({
             snippet: snippets[0].snippet,
-            styles: this.tb.process(this.tb.assets.stylesheet, fields),
-            previewStyles: this.tb.process(this.tb.assets.previewStylesheet, fields),
+            styles: this.tb.process(this.tb.assets.themeStyles, fields),
+            previewStyles: this.tb.process(this.tb.assets.webStyles, fields),
             fields,
         });
     }
@@ -47,8 +47,8 @@ export default class AppContainer extends React.Component {
         const fields = [...this.state.fields];
         fields[fieldKey] = { ...fields[fieldKey], value };
 
-        const styles = this.tb.process(this.tb.assets.stylesheet, fields);
-        const previewStyles = this.tb.process(this.tb.assets.previewStylesheet, fields);
+        const styles = this.tb.process(this.tb.assets.themeStyles, fields);
+        const previewStyles = this.tb.process(this.tb.assets.webStyles, fields);
 
         this.setState({ fields, styles, previewStyles });
     }

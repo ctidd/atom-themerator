@@ -11,13 +11,13 @@ export default class ThemeBuilder {
         const toString = response => response.text();
 
         const requests = [
-            fetch(`${CONFIG.themePath}/stylesheet.css`)
+            fetch(`${CONFIG.themePath}/theme.css`)
                 .then(toString)
-                .then(str => this.assets.stylesheet = str),
+                .then(str => this.assets.themeStyles = str),
 
-            fetch(`${CONFIG.themePath}/previewStylesheet.css`)
+            fetch(`${CONFIG.themePath}/web.css`)
                 .then(toString)
-                .then(str => this.assets.previewStylesheet = str),
+                .then(str => this.assets.webStyles = str),
 
             fetch(`${CONFIG.themePath}/README.md`)
                 .then(toString)
@@ -36,11 +36,11 @@ export default class ThemeBuilder {
     }
 
     process(styles, fields) {
-        return fields.reduce((stylesheet, field, i) => {
+        return fields.reduce((processingStyles, field, i) => {
             const token = fields[i].token;
             const pattern = new RegExp(`@${token};`, 'g');
             const value = field.value;
-            return stylesheet.replace(pattern, `${value};`);
+            return processingStyles.replace(pattern, `${value};`);
         }, styles);
     }
 
