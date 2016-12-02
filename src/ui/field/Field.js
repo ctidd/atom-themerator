@@ -17,13 +17,19 @@ export default ({
             { label }
         </label>
         { options.length === 0 ?
-            <input
-                className="atui-field-input"
-                name={ id }
-                id={ id }
-                value={ value }
-                onChange={ onChange }
-                />
+            <div>
+                <input
+                    className="atui-field-input"
+                    name={ id }
+                    id={ id }
+                    value={ value }
+                    onChange={ onChange }
+                    />
+                <div
+                    className="atui-field-colorPreview"
+                    style={ { background: value } }>
+                </div>
+            </div>
             :
             <select
                 className="atui-field-select"

@@ -1,4 +1,5 @@
 .atui-field > * + * {
+    position: relative;
     margin-top: .8rem;
 }
 
@@ -21,4 +22,14 @@
 .atui-field-input:focus,
 .atui-field-select:focus {
     border-color: #40a977;
+}
+
+.atui-field-colorPreview {
+    position: absolute;
+    top: 50%;
+    right: 1.2rem;
+    margin-top: -.6rem;
+    border-radius: 100%;
+    height: 1.2rem;
+    width: 1.2rem;
 }
