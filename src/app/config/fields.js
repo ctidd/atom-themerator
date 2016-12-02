@@ -7,7 +7,7 @@ export default [
     {
         token: 'ui-background',
         label: 'UI: Background',
-        value: '#101010',
+        value: '#1a2326',
     },
     {
         token: 'ui-cursor',
@@ -32,12 +32,12 @@ export default [
     {
         token: 'all-variable',
         label: 'All: Variable',
-        value: '#fff',
+        value: '#76d1e8',
     },
     {
         token: 'all-variable-this',
         label: 'All: `this` Variable',
-        value: '#fff',
+        value: '#02a5ce',
     },
     {
         token: 'all-constant',
@@ -47,52 +47,52 @@ export default [
     {
         token: 'all-constant-string',
         label: 'All: String',
-        value: '#40a977',
+        value: '#02ce91',
     },
     {
         token: 'all-constant-string-delimiter',
         label: 'All: String Delimiter',
-        value: '#40a977',
+        value: '#02ce91',
     },
     {
         token: 'all-constant-numeric',
         label: 'All: Number',
-        value: '#40a977',
+        value: '#02ce91',
     },
     {
         token: 'all-constant-color',
         label: 'All: Color',
-        value: '#40a977',
+        value: '#02ce91',
     },
     {
         token: 'all-constant-regexp',
         label: 'All: Regular Expression',
-        value: '#40a977',
+        value: '#02ce91',
     },
     {
         token: 'all-regexp',
         label: 'All: Regular Expression',
-        value: '#40a977',
+        value: '#02ce91',
     },
     {
         token: 'all-keyword',
         label: 'All: Keyword',
-        value: '#ba3525',
+        value: '#02a5ce',
     },
     {
         token: 'all-keyword-storage',
         label: 'All: Storage Keyword',
-        value: '#ba3525',
+        value: '#02a5ce',
     },
     {
         token: 'all-keyword-type',
         label: 'All: Type Keyword',
-        value: '#ba3525',
+        value: '#02a5ce',
     },
     {
         token: 'all-keyword-new',
         label: 'All: `new` Keyword',
-        value: '#ba3525',
+        value: '#02a5ce',
     },
     {
         token: 'all-keyword-operator',
@@ -102,37 +102,37 @@ export default [
     {
         token: 'all-keyword-unit',
         label: 'All: Unit',
-        value: '#ba3525',
+        value: '#02ce91',
     },
     {
         token: 'all-type-class',
         label: 'All: Class Type',
-        value: '#ba3525',
+        value: '#02a5ce',
     },
     {
         token: 'all-key',
         label: 'All: Object Key',
-        value: '#ba3525',
+        value: '#fff',
     },
     {
         token: 'all-function',
         label: 'All: Function',
-        value: '#ba3525',
+        value: '#fff',
     },
     {
         token: 'all-error',
         label: 'All: Error / Invalid',
-        value: '#40a977',
+        value: '#ce023f',
     },
     {
         token: 'markup-tag',
         label: 'Markup: Tag',
-        value: '#ba3525',
+        value: '#02a5ce',
     },
     {
         token: 'markup-attribute',
         label: 'Markup: Attribute',
-        value: '#ba3525',
+        value: '#76d1e8',
     },
     {
         token: 'markup-punctuation',
@@ -140,63 +140,38 @@ export default [
         value: '#808080',
     },
     {
+        token: 'css-selector',
+        label: 'CSS: Selector',
+        value: '#02a5ce',
+    },
+    {
         token: 'css-property',
         label: 'CSS: Property',
-        value: '#ba3525',
-    },
-    {
-        token: 'css-attribute',
-        label: 'CSS: Attribute',
-        value: '#ba3525',
-    },
-    {
-        token: 'css-variable',
-        label: 'CSS: Variable',
-        value: '#ba3525',
-    },
-    {
-        token: 'css-keyword',
-        label: 'CSS: Keyword',
-        value: '#ba3525',
-    },
-    {
-        token: 'css-function',
-        label: 'CSS: Function',
-        value: '#ba3525',
-    },
-    {
-        token: 'css-constant',
-        label: 'CSS: Constant',
-        value: '#40a977',
-    },
-    {
-        token: 'css-unit',
-        label: 'CSS: Unit',
-        value: '#40a977',
+        value: '#76d1e8',
     },
     {
         token: 'markdown-heading',
         label: 'Markdown: Heading',
-        value: '#40a977',
+        value: '#02a5ce',
     },
     {
         token: 'git-added',
         label: 'Git Gutter: Added',
-        value: '#40a977',
+        value: '#02ce91',
     },
     {
         token: 'git-modified',
         label: 'Git Gutter: Modified',
-        value: '#40a977',
+        value: '#02ce91',
     },
     {
         token: 'git-renamed',
         label: 'Git Gutter: Renamed',
-        value: '#40a977',
+        value: '#02ce91',
     },
     {
         token: 'git-removed',
         label: 'Git Gutter: Removed',
-        value: '#40a977',
+        value: '#ce023f',
     },
 ];

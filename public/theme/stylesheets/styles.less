@@ -68,7 +68,8 @@ atom-text-editor .selection .region {
     color: @all-comment;
 }
 
-.variable {
+.variable,
+.support.type.object {
     color: @all-variable;
 }
 
@@ -156,10 +157,6 @@ atom-text-editor .selection .region {
     color: @all-keyword;
 }
 
-.meta.selector {
-    color: @all-keyword;
-}
-
 .bold {
     font-style: bold;
 }
@@ -207,28 +204,16 @@ atom-text-editor .selection .region {
     color: @css-keyword;
 }
 
-.css .attribute-name.other {
-    color: @css-attribute;
+.css .selector {
+
+}
+
+.css .selector .entity {
+    color: @css-selector;
 }
 
 .css .property-name {
     color: @css-property;
-}
-
-.css .function {
-    color: @css-function;
-}
-
-.css .variable {
-    color: @css-variable;
-}
-
-.css .constant {
-    color: @css-constant;
-}
-
-.css .unit {
-    color: @css-unit;
 }
 
 /**************************************

@@ -23,7 +23,7 @@ export default class ThemeBuilder {
                 .then(toString)
                 .then(str => this.assets.syntaxVariables = str),
 
-            fetch(`${CONFIG.themePath}/web.css`)
+            fetch(`${CONFIG.themePath}/web.less`)
                 .then(toString)
                 .then(str => this.assets.webStyles = str),
 
