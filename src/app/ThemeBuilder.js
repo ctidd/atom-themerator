@@ -11,9 +11,17 @@ export default class ThemeBuilder {
         const toString = response => response.text();
 
         const requests = [
-            fetch(`${CONFIG.themePath}/theme.css`)
+            fetch(`${CONFIG.themePath}/index.less`)
                 .then(toString)
-                .then(str => this.assets.themeStyles = str),
+                .then(str => this.assets.index = str),
+
+            fetch(`${CONFIG.themePath}/stylesheets/styles.less`)
+                .then(toString)
+                .then(str => this.assets.styles = str),
+
+            fetch(`${CONFIG.themePath}/stylesheets/syntax-variables.less`)
+                .then(toString)
+                .then(str => this.assets.syntaxVariables = str),
 
             fetch(`${CONFIG.themePath}/web.css`)
                 .then(toString)
@@ -36,17 +44,21 @@ export default class ThemeBuilder {
     }
 
     process(styles, fields) {
-        return fields.reduce((processingStyles, field, i) => {
-            const token = fields[i].token;
-            const pattern = new RegExp(`@${token};`, 'g');
-            const value = field.value;
-            return processingStyles.replace(pattern, `${value};`);
-        }, styles);
+        let result = styles;
+
+        fields.forEach(field => {
+            const pattern = new RegExp(`@${field.token};`, 'g');
+            result = result.replace(pattern, `${field.value};`);
+        });
+
+        return result;
     }
 
-    download(styles) {
+    download(styles, syntaxVariables) {
         const zip = new JSZip();
-        zip.file('index.less', styles);
+        zip.file('index.less', this.assets.index);
+        zip.file('stylesheets/styles.less', styles);
+        zip.file('stylesheets/syntax-variables.less', syntaxVariables);
         zip.file('README.md', this.assets.readme);
         zip.file('LICENSE.md', this.assets.license);
         zip.file('package.json', this.assets.packageJson);

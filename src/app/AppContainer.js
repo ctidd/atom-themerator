@@ -23,8 +23,9 @@ export default class AppContainer extends React.Component {
 
         this.setState({
             snippet: snippets[0].snippet,
-            styles: this.tb.process(this.tb.assets.themeStyles, fields),
-            previewStyles: this.tb.process(this.tb.assets.webStyles, fields),
+            styles: this.tb.process(this.tb.assets.styles, fields),
+            syntaxVariables: this.tb.process(this.tb.assets.syntaxVariables, fields),
+            webStyles: this.tb.process(this.tb.assets.webStyles, fields),
             fields,
         });
     }
@@ -47,10 +48,16 @@ export default class AppContainer extends React.Component {
         const fields = [...this.state.fields];
         fields[fieldKey] = { ...fields[fieldKey], value };
 
-        const styles = this.tb.process(this.tb.assets.themeStyles, fields);
-        const previewStyles = this.tb.process(this.tb.assets.webStyles, fields);
+        const styles = this.tb.process(this.tb.assets.styles, fields);
+        const syntaxVariables = this.tb.process(this.tb.assets.syntaxVariables, fields);
+        const webStyles = this.tb.process(this.tb.assets.webStyles, fields);
 
-        this.setState({ fields, styles, previewStyles });
+        this.setState({
+            fields,
+            styles,
+            syntaxVariables,
+            webStyles,
+         });
     }
 
     onDownload(e) {
@@ -65,7 +72,7 @@ export default class AppContainer extends React.Component {
 
         return (
             <div>
-                <Style>{ this.state.previewStyles }</Style>
+                <Style>{ this.state.webStyles }</Style>
                 <Style>{ this.state.styles }</Style>
                 <AppLayout
                     snippet={ this.state.snippet }
