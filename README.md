@@ -13,6 +13,7 @@
 - [x] Implement color selection, code preview, and code preview switching.
 - [x] Implement download / view generated CSS functionality.
 - [x] Add initial theme package.json to downloaded zip.
+- [x] Add field color hints.
 - [ ] Complete preparing theme and field options.
 - [ ] Add a thorough assortment of language samples.
 
@@ -20,4 +21,4 @@
 
 - [ ] Explore using the Atom Highlights library to mark up example source code in-browser.
 - [ ] Design an easy mode to generate a cohesive and usable theme based on a few key color selections.
-- [ ] Develop or integrate a color picker and add field color hints.
+- [ ] Develop or integrate a color picker.
