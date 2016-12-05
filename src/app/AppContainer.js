@@ -12,6 +12,7 @@ export default class AppContainer extends React.Component {
         this.onSnippetChange = this.onSnippetChange.bind(this);
         this.onFieldChange = this.onFieldChange.bind(this);
         this.onDownload = this.onDownload.bind(this);
+        this.onRestore = this.onRestore.bind(this);
 
         this.tb = new ThemeBuilder();
         this.state = null;
@@ -41,12 +42,11 @@ export default class AppContainer extends React.Component {
     }
 
     onFieldChange(e) {
-        const token = e.target.id;
+        const key = e.target.id;
         const value = e.target.value;
 
-        const fieldKey = this.state.fields.findIndex(field => field.token === token);
-        const fields = [...this.state.fields];
-        fields[fieldKey] = { ...fields[fieldKey], value };
+        const fields = { ...this.state.fields };
+        fields[key] = { ...fields[key], value };
 
         const styles = this.tb.process(this.tb.assets.styles, fields);
         const syntaxVariables = this.tb.process(this.tb.assets.syntaxVariables, fields);
@@ -69,6 +69,26 @@ export default class AppContainer extends React.Component {
         );
     }
 
+    onRestore(e) {
+        const reader = new FileReader();
+
+        reader.onload = f => {
+            const fields = Object.assign({}, this.state.fields, JSON.parse(f.target.result));
+            const styles = this.tb.process(this.tb.assets.styles, fields);
+            const syntaxVariables = this.tb.process(this.tb.assets.syntaxVariables, fields);
+            const webStyles = this.tb.process(this.tb.assets.webStyles, fields);
+
+            this.setState({
+                fields,
+                styles,
+                syntaxVariables,
+                webStyles,
+             });
+        }
+
+        reader.readAsText(e.target.files[0]);
+    }
+
     render() {
         if (this.state === null) {
             return null;
@@ -85,6 +105,7 @@ export default class AppContainer extends React.Component {
                     fields={ this.state.fields }
                     onFieldChange={ this.onFieldChange }
                     onDownload={ this.onDownload }
+                    onRestore={ this.onRestore }
                     />
             </div>
         );

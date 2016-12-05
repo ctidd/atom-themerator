@@ -11,6 +11,7 @@ export default ({
     snippets,
     onSnippetChange,
     onDownload,
+    onRestore,
 }) => (
     <div>
         <Pane side={ PaneOptions.side.left }>
@@ -21,6 +22,12 @@ export default ({
                     </h1>
                     <p>Atom Themerator is an online syntax theme generator for Atom. Prepare your syntax theme with live preview, then download the generated theme for use &mdash; or manually tweak the generated theme for more precise styling.</p>
                     <p><a href="https://github.com/ctidd/atom-themerator">Atom Themerator on GitHub</a></p>
+                    <div>
+                        <label htmlFor="theme-restore" className="atui-hdg atui-hdg_minor">
+                            Modifying an existing Atom Themerator theme? Upload its atom-themerator.json file:
+                        </label>
+                    </div>
+                    <input id="theme-restore" type="file" onChange={ onRestore } />
                 </div>
                 <AppForm
                     snippet={ snippet }

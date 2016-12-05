@@ -46,9 +46,9 @@ export default class ThemeBuilder {
     process(styles, fields) {
         let result = styles;
 
-        fields.forEach(field => {
-            const pattern = new RegExp(`@${field.token};`, 'g');
-            result = result.replace(pattern, `${field.value};`);
+        Object.keys(fields).forEach(key => {
+            const pattern = new RegExp(`@${key};`, 'g');
+            result = result.replace(pattern, `${fields[key].value};`);
         });
 
         return result;

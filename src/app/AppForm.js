@@ -14,12 +14,12 @@ export default ({ fields, onFieldChange, snippets, onSnippetChange }) => (
                     onChange={ onSnippetChange }
                     />
             </li>
-            { fields.map((field, i) => (
-                <li key={ field.token }>
+            { Object.keys(fields).map(key => (
+                <li key={ key }>
                     <Field
-                        id={ field.token }
-                        label={ field.label }
-                        value={ field.value }
+                        id={ key }
+                        label={ fields[key].label }
+                        value={ fields[key].value }
                         onChange={ onFieldChange }
                         />
                 </li>
