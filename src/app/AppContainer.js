@@ -62,7 +62,11 @@ export default class AppContainer extends React.Component {
 
     onDownload(e) {
         e.preventDefault();
-        this.tb.download(this.state.styles, this.state.syntaxVariables);
+        this.tb.download(
+            this.state.styles,
+            this.state.syntaxVariables,
+            this.state.fields,
+        );
     }
 
     render() {

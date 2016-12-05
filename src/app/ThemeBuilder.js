@@ -54,7 +54,7 @@ export default class ThemeBuilder {
         return result;
     }
 
-    download(styles, syntaxVariables) {
+    download(styles, syntaxVariables, fields) {
         const zip = new JSZip();
         zip.file('index.less', this.assets.index);
         zip.file('stylesheets/styles.less', styles);
@@ -62,6 +62,7 @@ export default class ThemeBuilder {
         zip.file('README.md', this.assets.readme);
         zip.file('LICENSE.md', this.assets.license);
         zip.file('package.json', this.assets.packageJson);
+        zip.file('atom-themerator.json', JSON.stringify(fields));
         zip.generateAsync({ type: 'blob' }).then(blob => FileSaver.saveAs(blob, 'theme.zip'));
     }
 }
