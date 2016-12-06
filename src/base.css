@@ -32,3 +32,12 @@ body, button, input, select {
 a {
     color: inherit;
 }
+
+.atui-box {
+}
+
+.atui-box_dusty {
+    border-radius: .2rem;
+    padding: 1.2rem;
+    background: #f0f0f0;
+}

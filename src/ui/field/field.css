@@ -24,6 +24,32 @@
     border-color: #40a977;
 }
 
+.atui-field-input_file {
+    position: absolute;
+    height: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.atui-field-pseudoFile {
+    display: inline-block;
+    padding: 1.2rem 2.4rem;
+    height: 4.8rem;
+    text-align: center;
+    border-radius: .2rem;
+    color: #fff;
+    font-weight: 700;
+    background: #40a977;
+    cursor: pointer;
+}
+
+.atui-field-input_file:focus ~ .atui-field-pseudoFile,
+.atui-field-input_file:hover ~ .atui-field-pseudoFile,
+.atui-field-pseudoFile:focus,
+.atui-field-pseudoFile:hover {
+    background: #02a5ce;
+}
+
 .atui-field-colorPreview {
     position: absolute;
     top: 50%;
