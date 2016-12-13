@@ -6,6 +6,10 @@
     cursor: default;
 }
 
+:focus {
+    outline: none;
+}
+
 button, a {
     cursor: pointer;
 }
