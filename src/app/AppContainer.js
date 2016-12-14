@@ -57,7 +57,7 @@ export default class AppContainer extends React.Component {
             styles,
             syntaxVariables,
             webStyles,
-         });
+        });
     }
 
     onDownload(e) {
@@ -83,8 +83,8 @@ export default class AppContainer extends React.Component {
                 styles,
                 syntaxVariables,
                 webStyles,
-             });
-        }
+            });
+        };
 
         reader.readAsText(e.target.files[0]);
     }
