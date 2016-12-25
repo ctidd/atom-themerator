@@ -27,7 +27,7 @@ export default ({
                 </div>
                 <div className="atui-box atui-box_dusty">
                     <div className="atui-field">
-                        <h2 className="atui-hdg atui-hdg_minor">\
+                        <h2 className="atui-hdg atui-hdg_minor">
                             Modifying an existing Atom Themerator theme? Start by uploading its atom-themerator.json file:
                         </h2>
                         <input
