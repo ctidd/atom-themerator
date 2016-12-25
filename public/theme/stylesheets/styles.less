@@ -73,10 +73,6 @@ atom-text-editor .selection .region {
     color: @all-variable;
 }
 
-.variable.this {
-    color: @all-variable-this;
-}
-
 .keyword {
     color: @all-keyword;
 }
@@ -97,8 +93,9 @@ atom-text-editor .selection .region {
     color: @all-keyword-storage;
 }
 
-.constant {
-    color: @all-constant;
+.constant.language,
+.variable.this {
+    color: @all-constant-language;
 }
 
 .constant.numeric {

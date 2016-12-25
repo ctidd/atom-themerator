@@ -27,13 +27,9 @@
         "label": "All: Variable",
         "value": "#76d1e8"
     },
-    "all-variable-this": {
-        "label": "All: `this` Variable",
+    "all-constant-language": {
+        "label": "All: Language Constant",
         "value": "#02a5ce"
-    },
-    "all-constant": {
-        "label": "All: Constant",
-        "value": "#fff"
     },
     "all-constant-string": {
         "label": "All: String",
