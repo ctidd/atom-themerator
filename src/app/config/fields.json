@@ -35,10 +35,6 @@
         "label": "All: String",
         "value": "#02ce91"
     },
-    "all-constant-string-delimiter": {
-        "label": "All: String Delimiter",
-        "value": "#02ce91"
-    },
     "all-constant-numeric": {
         "label": "All: Number",
         "value": "#02ce91"
