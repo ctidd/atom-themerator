@@ -10,5 +10,6 @@
 
 .atui-button:hover,
 .atui-button:focus {
+    box-shadow: none;
     background: #02a5ce;
 }

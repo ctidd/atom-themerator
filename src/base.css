@@ -8,6 +8,7 @@
 
 :focus {
     outline: none;
+    box-shadow: 0 0 .4rem #02a5ce;
 }
 
 button, a {
