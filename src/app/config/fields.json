@@ -59,17 +59,21 @@
         "label": "All: Type Keyword",
         "value": "#02a5ce"
     },
-    "all-keyword-new": {
-        "label": "All: new Keyword",
-        "value": "#02a5ce"
-    },
-    "all-keyword-operator": {
-        "label": "All: Operator",
-        "value": "#fff"
-    },
     "all-keyword-unit": {
         "label": "All: Unit",
         "value": "#02ce91"
+    },
+    "all-operator-logic": {
+        "label": "All: Logic/Arithmetic Operator",
+        "value": "#fff"
+    },
+    "all-operator-assignment": {
+        "label": "All: Assignment Operator",
+        "value": "#fff"
+    },
+    "all-operator-accessor": {
+        "label": "All: Accessor Operator",
+        "value": "#fff"
     },
     "all-type-class": {
         "label": "All: Class Type",

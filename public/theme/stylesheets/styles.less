@@ -73,20 +73,26 @@ atom-text-editor .selection .region {
     color: @all-variable;
 }
 
-.keyword {
-    color: @all-keyword;
-}
-
+.keyword,
 .keyword.operator {
-    color: @all-keyword-operator;
-}
-
-.keyword.operator.new {
-    color: @all-keyword-new;
+    color: @all-keyword;
 }
 
 .keyword.other.unit {
     color: @all-keyword-unit;
+}
+
+.keyword.operator.assignment {
+    color: @all-operator-assignment;
+}
+
+.keyword.operator.accessor {
+    color: @all-operator-accessor;
+}
+
+.keyword.operator.arithmetic,
+.keyword.operator.comparison {
+    color: @all-operator-logic;
 }
 
 .storage {
