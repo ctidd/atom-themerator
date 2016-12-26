@@ -6,7 +6,7 @@ export default class SyntaxPreview extends React.component {
         super(props);
 
         this.state = {
-            content: props.content;
+            content: props.content,
         };
     }
 

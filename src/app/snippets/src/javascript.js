@@ -1,3 +1,5 @@
+import Syntax from './Syntax';
+
 export default class SyntaxPreview extends Syntax {
     constructor(options = []) {
         super(options);
