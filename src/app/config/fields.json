@@ -75,10 +75,6 @@
         "label": "All: Accessor Operator",
         "value": "#fff"
     },
-    "all-type-class": {
-        "label": "All: Class Type",
-        "value": "#02a5ce"
-    },
     "all-key": {
         "label": "All: Object Key",
         "value": "#fff"

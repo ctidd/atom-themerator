@@ -69,7 +69,8 @@ atom-text-editor .selection .region {
 }
 
 .variable,
-.support.type.object {
+.support.type.object,
+.entity.name.class {
     color: @all-variable;
 }
 
@@ -133,16 +134,9 @@ atom-text-editor .selection .region {
     color: @ui-text;
 }
 
-.entity.name.type {
-    color: @all-keyword-type;
-}
-
+.entity.name.type,
 .name.type.class {
-    color: @all-type-class;
-}
-
-.entity.name.class {
-    color: @ui-text;
+    color: @all-keyword-type;
 }
 
 .entity.name.function, .support.function, .function.arrow {
@@ -159,6 +153,10 @@ atom-text-editor .selection .region {
 
 .meta.require {
     color: @all-keyword;
+}
+
+.meta.embedded {
+    color: @ui-text;
 }
 
 .bold {
