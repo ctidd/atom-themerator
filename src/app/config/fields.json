@@ -25,7 +25,7 @@
     },
     "all-variable": {
         "label": "All: Variable",
-        "value": "#76d1e8"
+        "value": "#fff"
     },
     "all-constant-language": {
         "label": "All: Language Constant",
@@ -81,7 +81,7 @@
     },
     "all-function": {
         "label": "All: Function",
-        "value": "#fff"
+        "value": "#76d1e8"
     },
     "all-error": {
         "label": "All: Error / Invalid",
