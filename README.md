@@ -14,11 +14,12 @@
 - [x] Implement download / view generated CSS functionality.
 - [x] Add initial theme package.json to downloaded zip.
 - [x] Add field color hints.
+- [ ] Upgrade selectors and code samples with scoping `syntax--` prefixes, as Atom is no longer using shadow DOM for isolating the `atom-text-editor`.
+- [ ] Explore using the Atom Highlights library to mark up example source code in-browser.
 - [ ] Complete preparing theme and field options.
 - [ ] Add a thorough assortment of language samples.
 
 ### Phase 2
 
-- [ ] Explore using the Atom Highlights library to mark up example source code in-browser.
 - [ ] Design an easy mode to generate a cohesive and usable theme based on a few key color selections.
 - [ ] Develop or integrate a color picker.
